@@ -103,17 +103,41 @@ let app;
         function delet()
         {
             //document.getElementById("contactForm").reset();
-            $("ul").fadeOut(1000);
+            this.parentNode.parentNode.removeChild(this.parentNode);
+            inItemText.focus();
+            inItemText.select();
 
             
         }
         // Task 1 a
-        $("#newTaskButton").on("click", function(){
-            
+        $(document).ready(function() {
+        $("#newTaskButton").on("click", function(e){
+e.preventDefault();
+      //  declaring an variable  who will store the input value
+      // @ see : https://stackoverflow.com/questions/17183713/add-li-element-in-ul-using-jquery
+
+        var new_task = $('#taskTextInput').val();
+    
+   $('#taskText').replaceWith('<ul>'+new_task+'</ul>');
+   
+  //  if ( new_task >= 3 )
+  //  {
+   //     $('#taskText').append('<ul>'+new_task+'</ul>');
+       
+   // }
+    //   else
+     //  {
+     //   $('#taskText').replaceWith('<ul>'+new_task+'</ul>');
+    
+     //  }
+      // return false;
         });
+    });
+
 
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
+           
            
         });
 
@@ -122,7 +146,7 @@ let app;
         
             if(confirm("Are You Sure?"))
             {
-                   delet();
+            $("li").remove();
             }
 
            
