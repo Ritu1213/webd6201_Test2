@@ -1,6 +1,7 @@
 /***
  * @ author : Ritu Patel
  * @ Student ID: 100730021
+ * @ date: 08-03-2020.
  * @ This is the part of Test2.
  */
 class Contact {
@@ -99,9 +100,9 @@ let app;
 
         function delet()
          {
-           
+
          var elem = document.getElementById("task");
-         elem.parentNode.removeChild(elem);
+     elem.parentNode.removeChild(elem);
         }
         // Task 1 a
         $(document).ready(function () {
@@ -149,6 +150,15 @@ let app;
 
         $("li").on("click", ".editButton", function (e) {
 
+            var newText = prompt("What would you like to change this to?");
+           if(newText !== null){
+               $('#taskText').replaceWith('<li>'+newText+'</li>');
+               
+               }
+             else{
+                alert("You must add something");
+             }
+            
             
             
 
